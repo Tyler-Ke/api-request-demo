@@ -2,7 +2,7 @@
    <div>API Calls</div>
    <hr />
    <div v-for="user in userObj.users">
-      <h2>{{ user.name }}</h2>
+      <h3>{{ user.name }}</h3>
       <p>{{ user.email }}</p>
       <hr />
    </div>

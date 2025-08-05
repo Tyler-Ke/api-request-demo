@@ -1,0 +1,32 @@
+{
+   "destination": [
+      {
+         "id": 1,
+         "name": "Bangkok",
+         "days": 7,
+         "funFact": "Bangkok is cool",
+         "price": 4000
+      },
+      {
+         "id": 2,
+         "name": "Chiang Mai",
+         "days": 5,
+         "funFact": "Chiang Mai is beautiful",
+         "price": 5000
+      },
+      {
+         "id": 3,
+         "name": "Phuket",
+         "days": 6,
+         "funFact": "Phuket has great beaches",
+         "price": 7000
+      },
+      {
+         "id": 4,
+         "name": "Koh Samui",
+         "days": 4,
+         "funFact": "Koh Samui is an island",
+         "price": 6000
+      }
+   ]
+}
