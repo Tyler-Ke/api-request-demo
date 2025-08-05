@@ -1,10 +1,29 @@
 <template>
-   <div>API Calls</div>
-   <hr />
-   <div v-for="user in userObj.users">
-      <h3>{{ user.name }}</h3>
-      <p>{{ user.email }}</p>
+   <div class="contacer p-4">
+      <div>
+         <h1 class="text-success text-center">Travel</h1>
+      </div>
       <hr />
+      <table class="table table-striped table-light">
+         <thead>
+            <tr>
+               <th>Name</th>
+               <th>Days</th>
+               <th>Price</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr
+               class="table-light"
+               v-for="destination in destinationObj.destinationList"
+               :key="destination.id"
+            >
+               <td>{{ destination.name }}</td>
+               <td>{{ destination.days }}</td>
+               <td>{{ destination.price }}</td>
+            </tr>
+         </tbody>
+      </table>
    </div>
 </template>
 
@@ -12,24 +31,18 @@
 import { reactive, onMounted } from "vue";
 import axios from "axios";
 
-const userObj = reactive({
-   users: [],
+const destinationObj = reactive({
+   destinationList: [],
 });
 
 onMounted(() => {
-   fetch("https://jsonplaceholder.typicode.com/todos/1/users")
-      .then((response) => response.json())
-      .then((data) => {
-         console.log(data);
-         userObj.users = data;
-      });
-
-   /*axios
-      .get("https://jsonplaceholder.typicode.com/todos/1/users")
-      .then((response) => {
-         console.log(response.data);
-         userObj.users = response.data;
-      });
-   */
+   loadDestination();
 });
+
+function loadDestination() {
+   axios.get("http://localhost:3000/destination").then((response) => {
+      console.log(response.data);
+      destinationObj.destinationList = response.data;
+   });
+}
 </script>
